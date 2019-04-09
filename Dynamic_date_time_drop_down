@@ -1,0 +1,816 @@
+{
+   "title": "",
+   "id": "c7c1b05f61493a27dc653913e5ef66a3",
+   "workspace": {
+      "dimensions": {
+         "w": 550
+      },
+      "datasources": [
+         "927491af3d4a5c1264e348d3027b6067"
+      ]
+   },
+   "datasourceProps": [
+      "page"
+   ],
+   "appliedMigrations": {
+      "post_dst": true,
+      "separate_root_dsts": true,
+      "result_rows2": true,
+      "textOnlyFormulas": true
+   },
+   "components": [
+      {
+         "type": "input",
+         "id": "05671475-309",
+         "displayName": "User Input Control 3",
+         "vis": false,
+         "dstContext": {
+            "id": "dst05671475309",
+            "kid": "c7c1b05f61493a27dc653913e5ef66a3"
+         },
+         "components": [
+            {
+               "type": "proxy",
+               "role": "values",
+               "id": "ffcf9e42-310",
+               "displayName": "Values",
+               "fmtArgs": {
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "expiryScheme": [
+                        {
+                           "expiryType": "EOD",
+                           "expiryTimezoneId": null
+                        }
+                     ],
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "resultCount": 1
+                  }
+               },
+               "formulas": [
+                  {
+                     "txt": "SWITCH($period_dates,\"Year To Date\",DATE_ENDOF(TODAY(),\"1\"),\"Quarter To Date\",DATE_ENDOF(TODAY(),\"2\"),\"Month To Date\",DATE_ENDOF(TODAY(),\"3\"),\"Week To Date\",DATE_ENDOF(TODAY(),\"4\"),\"_default_\",DATE_ADD(DATE_ENDOF(TODAY(),\"3\"),\"3\",$period_dates))\n\n\n",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "1553884200"
+                  ]
+               ],
+               "autoFmt": false
+            },
+            {
+               "type": "proxy",
+               "role": "labels",
+               "id": "98354821-311",
+               "displayName": "Labels",
+               "formulas": [],
+               "data": [],
+               "autoFmt": false
+            }
+         ],
+         "scope": 2,
+         "propName": "end_Date",
+         "controlHidden": "hidden",
+         "inputType": 1,
+         "inputLabel": "end_Date"
+      },
+      {
+         "type": "input",
+         "id": "890f022e-306",
+         "displayName": "User Input Control 2",
+         "vis": false,
+         "dstContext": {
+            "id": "dst890f022e306",
+            "kid": "c7c1b05f61493a27dc653913e5ef66a3"
+         },
+         "components": [
+            {
+               "type": "proxy",
+               "role": "values",
+               "id": "fc319d63-307",
+               "displayName": "Values",
+               "fmtArgs": {
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "expiryScheme": [
+                        {
+                           "expiryType": "EOD",
+                           "expiryTimezoneId": null
+                        }
+                     ],
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "resultCount": 1
+                  }
+               },
+               "formulas": [
+                  {
+                     "txt": "SWITCH($period_dates,\"Year To Date\",DATE_STARTOF(TODAY(),\"1\"),\"Quarter To Date\",DATE_STARTOF(TODAY(),\"2\"),\"Month To Date\",DATE_STARTOF(TODAY(),\"3\"),\"Week To Date\",DATE_STARTOF(TODAY(),\"4\"),\"_default_\",DATE_ADD(DATE_STARTOF(TODAY(),\"3\"),\"3\",$period_dates))",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "1551378600"
+                  ]
+               ],
+               "autoFmt": false
+            },
+            {
+               "type": "proxy",
+               "role": "labels",
+               "id": "26ed2182-308",
+               "displayName": "Labels",
+               "formulas": [],
+               "data": [],
+               "autoFmt": false
+            }
+         ],
+         "scope": 2,
+         "propName": "start_Date",
+         "controlHidden": "hidden",
+         "inputType": 1,
+         "inputLabel": "start_Date"
+      },
+      {
+         "type": "input",
+         "id": "9c95bb0d-41",
+         "displayName": "User Input Control 4",
+         "vis": false,
+         "dstContext": {
+            "id": "dst9c95bb0d41",
+            "kid": "c7c1b05f61493a27dc653913e5ef66a3"
+         },
+         "components": [
+            {
+               "type": "proxy",
+               "role": "values",
+               "id": "3c0921e6-42",
+               "displayName": "Values",
+               "fmtArgs": {
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "expiryScheme": [
+                        {
+                           "expiryType": "EOD",
+                           "expiryTimezoneId": null
+                        }
+                     ],
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "resultCount": 1
+                  }
+               },
+               "formulas": [
+                  {
+                     "txt": "SWITCH($period_dates,\"Year To Date\",DATE_STARTOF(TODAY(),\"1\",-1),\"Quarter To Date\",DATE_STARTOF(TODAY(),\"2\",-1),\"Month To Date\",DATE_STARTOF(TODAY(),\"3\",-1),\"Week To Date\",DATE_STARTOF(TODAY(),\"4\",-1),\"_default_\",DATE_ADD(DATE_STARTOF(TODAY(),\"3\",-1),\"3\",$period_dates))\n\n",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "1548959400"
+                  ]
+               ],
+               "autoFmt": false
+            },
+            {
+               "type": "proxy",
+               "role": "labels",
+               "id": "234e560d-43",
+               "displayName": "Labels",
+               "formulas": [],
+               "data": [],
+               "autoFmt": false
+            }
+         ],
+         "scope": 2,
+         "propName": "start_Date_Pre",
+         "controlHidden": "hidden",
+         "inputType": 1,
+         "inputLabel": "start_date_previous"
+      },
+      {
+         "type": "input",
+         "id": "cd46a063-44",
+         "displayName": "User Input Control 5",
+         "vis": false,
+         "dstContext": {
+            "id": "dstcd46a06344",
+            "kid": "c7c1b05f61493a27dc653913e5ef66a3"
+         },
+         "components": [
+            {
+               "type": "proxy",
+               "role": "values",
+               "id": "c760a93a-45",
+               "displayName": "Values",
+               "fmtArgs": {
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "expiryScheme": [
+                        {
+                           "expiryType": "EOD",
+                           "expiryTimezoneId": null
+                        }
+                     ],
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "resultCount": 1
+                  }
+               },
+               "formulas": [
+                  {
+                     "txt": "SWITCH($period_dates,\"Year To Date\",DATE_ENDOF(TODAY(),\"1\",-1),\"Quarter To Date\",DATE_ENDOF(TODAY(),\"2\",-1),\"Month To Date\",DATE_ENDOF(TODAY(),\"3\",-1),\"Week To Date\",DATE_ENDOF(TODAY(),\"4\",-1),\"_default_\",DATE_ADD(DATE_ENDOF(TODAY(),\"3\",-1),\"3\",$period_dates))\n\n\n",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "1551292200"
+                  ]
+               ],
+               "autoFmt": false
+            },
+            {
+               "type": "proxy",
+               "role": "labels",
+               "id": "b6e05727-46",
+               "displayName": "Labels",
+               "formulas": [],
+               "data": [],
+               "autoFmt": false
+            }
+         ],
+         "scope": 2,
+         "propName": "end_Date_Pre",
+         "controlHidden": "hidden",
+         "inputType": 1,
+         "inputLabel": "end_date_previous"
+      },
+      {
+         "type": "panel_grid",
+         "id": "1ff5de51-7",
+         "displayName": "Layout Grid",
+         "components": [
+            {
+               "type": "input",
+               "id": "9e786c19-1",
+               "displayName": "User Input Control",
+               "layoutConfig": {
+                  "x": 0,
+                  "y": 0
+               },
+               "dstContext": {
+                  "id": "dst9e786c191",
+                  "kid": "c7c1b05f61493a27dc653913e5ef66a3"
+               },
+               "components": [
+                  {
+                     "type": "proxy",
+                     "role": "values",
+                     "id": "47479d75-2",
+                     "displayName": "Values",
+                     "fmtArgs": {
+                        "resultMetadata": {
+                           "ignoreDateFormat": true,
+                           "isAggregated": false,
+                           "expiryScheme": [
+                              {
+                                 "expiryType": "EOD",
+                                 "expiryTimezoneId": null
+                              }
+                           ],
+                           "formulaIsDataPointer": false,
+                           "suggestedName": "Unnamed 1",
+                           "resultCount": 1
+                        }
+                     },
+                     "formulas": [
+                        {
+                           "txt": "ARRAY(\"Year To Date\",\"Quarter To Date\",\"Month To Date\",\"Week To Date\",ARRAY(0,CUMULATIVE(REPEAT(-1,COUNT(GROUP(DATEVALUE(DATERANGE(DATE_STARTOF(TODAY(),\"1\"),TODAY()),\"yyMM\")))-1))))",
+                           "ver": 2
+                        }
+                     ],
+                     "data": [
+                        [
+                           "Year To Date",
+                           "Quarter To Date",
+                           "Month To Date",
+                           "Week To Date",
+                           "0",
+                           "-1",
+                           "-2",
+                           "-3"
+                        ]
+                     ],
+                     "autoFmt": false
+                  },
+                  {
+                     "type": "proxy",
+                     "role": "labels",
+                     "id": "4f112c6a-3",
+                     "displayName": "Labels",
+                     "fmtArgs": {
+                        "resultMetadata": {
+                           "ignoreDateFormat": true,
+                           "isAggregated": false,
+                           "expiryScheme": [
+                              {
+                                 "expiryType": "EOD",
+                                 "expiryTimezoneId": null
+                              }
+                           ],
+                           "formulaIsDataPointer": false,
+                           "suggestedName": "Unnamed 1",
+                           "resultCount": 1
+                        }
+                     },
+                     "formulas": [
+                        {
+                           "txt": "ARRAY(\"Year To Date\",\"Quarter To Date\",\"Month To Date\",\"Week To Date\",MAPFLAT(ARRAY(0,CUMULATIVE(REPEAT(-1,COUNT(GROUP(DATEVALUE(DATERANGE(DATE_STARTOF(TODAY(),\"1\"),TODAY()),\"yyMM\")))-1))),\"month\",DATEVALUE(DATE_ADD(TODAY(),\"3\",$month),\"MMMM yyyy\")))",
+                           "ver": 2
+                        }
+                     ],
+                     "data": [
+                        [
+                           "Year To Date",
+                           "Quarter To Date",
+                           "Month To Date",
+                           "Week To Date",
+                           "April 2019",
+                           "March 2019",
+                           "February 2019",
+                           "January 2019"
+                        ]
+                     ],
+                     "autoFmt": false
+                  }
+               ],
+               "scope": 2,
+               "propName": "period_dates",
+               "defaultValue": "March 2019",
+               "inputType": 1,
+               "inputLabel": "Period",
+               "controlWidth": true,
+               "width": "200",
+               "submitAsGroup": "0",
+               "listenAllChanges": false
+            },
+            {
+               "type": "input_button",
+               "id": "f9034e16-4",
+               "displayName": "Button",
+               "layoutConfig": {
+                  "x": 1,
+                  "y": 0
+               },
+               "dstContext": {
+                  "id": "dstf9034e164",
+                  "kid": "c7c1b05f61493a27dc653913e5ef66a3"
+               },
+               "components": [
+                  {
+                     "type": "proxy",
+                     "role": "value",
+                     "id": "12874a25-5",
+                     "displayName": "Value",
+                     "formulas": [],
+                     "data": [],
+                     "autoFmt": true
+                  },
+                  {
+                     "type": "proxy",
+                     "role": "label",
+                     "id": "d85cd6f9-6",
+                     "displayName": "Label",
+                     "fmtArgs": {
+                        "resultMetadata": {
+                           "ignoreDateFormat": false,
+                           "isAggregated": false,
+                           "formulaIsDataPointer": false,
+                           "suggestedName": "Unnamed 1",
+                           "resultCount": 1
+                        }
+                     },
+                     "formulas": [
+                        {
+                           "txt": "\"Submit\"",
+                           "src": {
+                              "t": "expr",
+                              "v": false,
+                              "c": [
+                                 {
+                                    "t": "l",
+                                    "v": "Submit"
+                                 }
+                              ]
+                           },
+                           "ver": 2
+                        }
+                     ],
+                     "data": [
+                        [
+                           "Submit"
+                        ]
+                     ]
+                  }
+               ],
+               "scope": 2,
+               "propName": "",
+               "customWidth": true,
+               "buttonWidth": "200",
+               "overrideColors": true,
+               "backgroundColor": "cx-theme_blue_2",
+               "borderColor": "cx-theme_000",
+               "textColor": "cx-theme_000"
+            }
+         ],
+         "rows": 1,
+         "cols": 2
+      },
+      {
+         "type": "table",
+         "id": "30a3e15c-215",
+         "displayName": "Table",
+         "dstContext": {
+            "id": "dst30a3e15c215",
+            "kid": "c7c1b05f61493a27dc653913e5ef66a3"
+         },
+         "components": [
+            {
+               "type": "table_col",
+               "role": "tcol",
+               "id": "0789de81-216",
+               "displayName": "Unnamed 1",
+               "vis": false,
+               "size": "xx-small",
+               "fmt": "txt",
+               "fmtArgs": {
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "resultCount": 1
+                  },
+                  "autoFmt": {
+                     "fmtArgs": {},
+                     "defaultAggregate": "COUNT",
+                     "fmt": "txt"
+                  }
+               },
+               "components": [],
+               "formulas": [
+                  {
+                     "txt": "MAPFLAT(NUMBERFORMAT(CUMULATIVE(REPEAT(1,CEILING(927491af3d4a5c1264e348d3027b6067@/Pagination/NumberOfItems;/80)))),\"page\",SELECT(927491af3d4a5c1264e348d3027b6067@/Items/Customer/CustomerName;,BETWEEN(DATE_STARTOF(SUBSTRING(927491af3d4a5c1264e348d3027b6067@/Items/OrderDate;,6,16),\"3\"),$start_Date,$end_Date)))",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "LMH Industries",
+                     "Garrick Inc.",
+                     "The House of Sireen",
+                     "Ben's Emporium",
+                     "LMH Industries",
+                     "Matt's Supplies Ltd.",
+                     "Wade's Apparel & Accessories",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     ""
+                  ]
+               ],
+               "autoFmt": true,
+               "name": "Unnamed 1",
+               "index": 0,
+               "colHidden": "hidden",
+               "customHeader": false
+            },
+            {
+               "type": "table_col",
+               "role": "tcol",
+               "id": "86482c56-219",
+               "displayName": "Unnamed 2",
+               "vis": false,
+               "size": "xx-small",
+               "fmt": "dat2",
+               "fmtArgs": {
+                  "autoFmt": {
+                     "fmtArgs": {
+                        "dateInputFormat": "custom",
+                        "dateInputFormatCustom": "d MMM yyyy",
+                        "dateFormat": "custom",
+                        "dateFormatCustom": "d MMM yyyy"
+                     },
+                     "defaultAggregate": "COUNT",
+                     "fmt": "dat2"
+                  },
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "isDSTApplied": true,
+                     "resultCount": 1
+                  }
+               },
+               "components": [],
+               "formulas": [
+                  {
+                     "txt": "DATEVALUE(DATERANGE($start_Date,$end_Date),\"dd MMM yyyy\")",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "1 Mar 2019",
+                     "2 Mar 2019",
+                     "3 Mar 2019",
+                     "4 Mar 2019",
+                     "5 Mar 2019",
+                     "6 Mar 2019",
+                     "7 Mar 2019",
+                     "8 Mar 2019",
+                     "9 Mar 2019",
+                     "10 Mar 2019",
+                     "11 Mar 2019",
+                     "12 Mar 2019",
+                     "13 Mar 2019",
+                     "14 Mar 2019",
+                     "15 Mar 2019",
+                     "16 Mar 2019",
+                     "17 Mar 2019",
+                     "18 Mar 2019",
+                     "19 Mar 2019",
+                     "20 Mar 2019",
+                     "21 Mar 2019",
+                     "22 Mar 2019",
+                     "23 Mar 2019",
+                     "24 Mar 2019",
+                     "25 Mar 2019",
+                     "26 Mar 2019",
+                     "27 Mar 2019",
+                     "28 Mar 2019",
+                     "29 Mar 2019",
+                     "30 Mar 2019"
+                  ]
+               ],
+               "autoFmt": true,
+               "name": "Unnamed 2",
+               "index": 1,
+               "colHidden": "hidden",
+               "customHeader": false
+            },
+            {
+               "type": "table_col",
+               "role": "tcol",
+               "id": "07b7347e-222",
+               "displayName": "Unnamed 3",
+               "vis": false,
+               "size": "xx-small",
+               "fmt": "dat2",
+               "fmtArgs": {
+                  "autoFmt": {
+                     "fmtArgs": {
+                        "dateInputFormat": "custom",
+                        "dateInputFormatCustom": "d MMM yyyy",
+                        "dateFormat": "custom",
+                        "dateFormatCustom": "d MMM yyyy"
+                     },
+                     "defaultAggregate": "COUNT",
+                     "fmt": "dat2"
+                  },
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "isDSTApplied": true,
+                     "resultCount": 1
+                  }
+               },
+               "components": [],
+               "formulas": [
+                  {
+                     "txt": "MAPFLAT(NUMBERFORMAT(CUMULATIVE(REPEAT(1,CEILING(927491af3d4a5c1264e348d3027b6067@/Pagination/NumberOfItems;/80)))),\"page\",SELECT(DATEVALUE(SUBSTRING(927491af3d4a5c1264e348d3027b6067@/Items/OrderDate;,6,16),\" dd MMM yyyy\"),DATE_IN(SUBSTRING(927491af3d4a5c1264e348d3027b6067@/Items/OrderDate;,6,16),\"3\",$period_dates,$period_dates) ))\n",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "29 Mar 2019",
+                     "12 Mar 2019",
+                     "11 Mar 2019",
+                     "8 Mar 2019",
+                     "6 Mar 2019",
+                     "3 Mar 2019",
+                     "1 Mar 2019",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     ""
+                  ]
+               ],
+               "autoFmt": true,
+               "name": "Unnamed 3",
+               "index": 2,
+               "colHidden": "hidden",
+               "customHeader": false
+            },
+            {
+               "type": "table_col",
+               "role": "tcol",
+               "id": "95f62474-225",
+               "displayName": "Unnamed 4",
+               "vis": false,
+               "size": "xx-small",
+               "fmt": "dat2",
+               "fmtArgs": {
+                  "autoFmt": {
+                     "fmtArgs": {
+                        "dateInputFormat": "custom",
+                        "dateInputFormatCustom": "d MMM yyyy",
+                        "dateFormat": "custom",
+                        "dateFormatCustom": "d MMM yyyy"
+                     },
+                     "defaultAggregate": "COUNT",
+                     "fmt": "dat2"
+                  },
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "isDSTApplied": true,
+                     "resultCount": 1
+                  }
+               },
+               "components": [],
+               "formulas": [
+                  {
+                     "txt": "MAPFLAT(NUMBERFORMAT(CUMULATIVE(REPEAT(1,CEILING(927491af3d4a5c1264e348d3027b6067@/Pagination/NumberOfItems;/80)))),\"page\",SELECT(DATEVALUE(SUBSTRING(927491af3d4a5c1264e348d3027b6067@/Items/OrderDate;,6,16),\"dd MMM yyyy\"),BETWEEN(DATE_STARTOF(SUBSTRING(927491af3d4a5c1264e348d3027b6067@/Items/OrderDate;,6,16),\n\"3\"),$start_Date,$end_Date)))",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "29 Mar 2019",
+                     "12 Mar 2019",
+                     "11 Mar 2019",
+                     "8 Mar 2019",
+                     "6 Mar 2019",
+                     "3 Mar 2019",
+                     "1 Mar 2019",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     ""
+                  ]
+               ],
+               "autoFmt": true,
+               "name": "Unnamed 4",
+               "index": 3,
+               "colHidden": "hidden",
+               "customHeader": false
+            },
+            {
+               "type": "table_col",
+               "role": "tcol",
+               "id": "9fdff901-71",
+               "displayName": "New Column",
+               "vis": false,
+               "size": "xx-small",
+               "fmt": "txt",
+               "fmtArgs": {
+                  "autoFmt": {
+                     "fmtArgs": {},
+                     "defaultAggregate": "COUNT",
+                     "fmt": "txt"
+                  },
+                  "resultMetadata": {
+                     "ignoreDateFormat": false,
+                     "isAggregated": false,
+                     "formulaIsDataPointer": false,
+                     "suggestedName": "Unnamed 1",
+                     "isDSTApplied": true,
+                     "resultCount": 1
+                  }
+               },
+               "components": [],
+               "formulas": [
+                  {
+                     "txt": "MAPFLAT(NUMBERFORMAT(CUMULATIVE(REPEAT(1,CEILING(927491af3d4a5c1264e348d3027b6067@/Pagination/NumberOfItems;/80)))),\"page\",SELECT(927491af3d4a5c1264e348d3027b6067@/Items/Customer/CustomerName;,BETWEEN(SUBSTRING(927491af3d4a5c1264e348d3027b6067@/Items/OrderDate;,6,16),$start_Date,$end_Date)))",
+                     "ver": 2
+                  }
+               ],
+               "data": [
+                  [
+                     "LMH Industries",
+                     "Garrick Inc.",
+                     "The House of Sireen",
+                     "Ben's Emporium",
+                     "LMH Industries",
+                     "Matt's Supplies Ltd.",
+                     "Wade's Apparel & Accessories",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     ""
+                  ]
+               ],
+               "autoFmt": true,
+               "name": "New Column",
+               "index": 4,
+               "colHidden": "hidden",
+               "customHeader": false,
+               "align": "left"
+            }
+         ]
+      }
+   ]
+}
